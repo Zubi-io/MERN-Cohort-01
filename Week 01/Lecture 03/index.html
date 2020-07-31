@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .newClass {
+            margin-left: 100px;
+            /* padding-left: 100px; */
+            margin-top: 100px;
+            margin-bottom: 100px;
+            border-radius: 5px;
+            box-shadow: 15px 15px 30px 5px rgba(0,0,0,0.5);
+            height: 300px;
+            width: 300px;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="newClass">
+        A DIV
+    </div>
+    <p id="demo"></p>
+    <p id="p">Some content pre-written</p>
+    <h1>DOM Manipulation</h1>
+    <p id="getbyid">Get it by ID</p>
+    <div class="getbyclass">
+        A Div Element
+    </div>
+    <div class="getbyclass">
+        2nd Div
+    </div>
+    <script>
+        var demo = document.getElementById('demo');
+        demo.innerHTML = "This is an <strong>awesome</strong> paragraph";
+        var toggleDiv = document.getElementsByTagName("div")[0];
+        // // toggleDiv.classList.remove("newClass");
+        // // var isClassed = false;
+        setInterval(function(){
+            toggleDiv.classList.toggle("newClass");
+        },1000)
+        var h2 = document.getElementById('p');
+        // h2.textContent = "Some text for h2";
+        console.log(h2.textContent);
+        // document.getElementById("getbyid").style.color = 'yellow';
+        // // p.style.color = 'yellow';
+        // var div = document.getElementsByClassName("getbyclass")[0];
+        // div.style.color = 'red';
+        // var h1 = document.getElementsByTagName("h1");
+        // h1[0].style.color = "blue";
+        var h1 = document.querySelector('h1');
+        h1.style.color = 'blue';
+        var p = document.querySelector('#getbyid');
+        p.style.color = 'green';
+        // var div = document.querySelector('.getbyclass');
+        // div.style.color = 'yellow';
+        var divs = document.querySelectorAll('.getbyclass');
+        for(var i = 0; i < divs.length; i++){
+            divs[i].style.color = 'cyan';
+            divs[i].style.border = '10px solid red';
+            divs[i].style.fontSize = '70px';
+            divs[i].style.background = "yellow";
+            divs[i].style.marginTop = "200px";
+        }
+        // var h1 = document.querySelector("h1");
+        // h1.style.color = 'pink';
+        // var body = document.querySelector("body");
+        // var isBlue = false;
+        // setInterval(function(){
+        //     if(!isBlue){
+        //         body.style.background = 'blue';
+        //     } else {
+        //         body.style.background = 'white'
+        //     }
+        //     isBlue = !isBlue
+        // },1000)
+    </script>
+</body>
+</html>
